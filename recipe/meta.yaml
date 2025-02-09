@@ -23,8 +23,8 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
-    - setuptools >=61.0
     - pip
+    - setuptools >=61.0
   run:
     - python
 
@@ -39,11 +39,11 @@ test:
 about:
   home: https://github.com/gvalkov/python-evdev
   summary: Bindings to the Linux input handling subsystem
-  doc_url: https://python-evdev.readthedocs.io
   license: BSD-3-Clause
   license_file: LICENSE
+  doc_url: https://python-evdev.readthedocs.io
 
 extra:
   recipe-maintainers:
-    - gvalkov
     - ehfd
+    - gvalkov

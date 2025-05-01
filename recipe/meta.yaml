@@ -1,5 +1,5 @@
 {% set name = "evdev" %}
-{% set version = "1.9.1" %}
+{% set version = "1.9.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/evdev-{{ version }}.tar.gz
-  sha256: dc640a064cb1c9fe1f8b970dc2039945a2a275d7b7ee62284bf427238abe45ee
+  sha256: 5d3278892ce1f92a74d6bf888cc8525d9f68af85dbe336c95d1c87fb8f423069
 
 build:
   skip: true  # [not linux]

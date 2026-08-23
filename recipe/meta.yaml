@@ -1,16 +1,16 @@
 {% set name = "evdev" %}
-{% set version = "1.9.3" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/evdev-{{ version }}.tar.gz
-  sha256: 2c140e01ac8437758fa23fe5c871397412461f42d421aa20241dc8fe8cfccbc9
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/evdev-{{ version }}.tar.gz
+  sha256: 442fb3f4c8dfc9e61e901133c356220c02d663eca8f34722e0cecdd637eba504
 
 build:
-  skip: true  # [not linux]
+  skip: true  # [not linux or py<311]
   # C_INCLUDE_PATH is manually parsed by setup.py, required to be set to the Linux kernel header directory
   script: C_INCLUDE_PATH=${CONDA_BUILD_SYSROOT}/usr/include {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -24,7 +24,7 @@ requirements:
   host:
     - python
     - pip
-    - setuptools >=61.0
+    - setuptools >=77.0
   run:
     - python
 
